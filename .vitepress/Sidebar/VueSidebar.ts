@@ -82,6 +82,52 @@ export default [
     ],
   },
   {
+    text: "深入组件",
+    collapsed: true,
+    items: [
+      {
+        text: "组件基础",
+        link: "/Vue/Vue/数据代理",
+      },
+      {
+        text: "extend",
+        link: "/Vue/Vue/extend",
+      },
+      {
+        text: "全局组件",
+        link: "/Vue/Vue/全局组件",
+      },
+      {
+        text: "局部组件",
+        link: "/Vue/Vue/局部组件",
+      },
+      {
+        text: "函数式组件",
+        link: "/Vue/Vue/函数式组件",
+      },
+      {
+        text: "组件传值",
+        link: "/Vue/Vue/数据监测",
+      },
+      {
+        text: "动态组件",
+        link: "/Vue/Vue/数据监测",
+      },
+      {
+        text: "异步组件",
+        link: "/Vue/Vue/数据监测",
+      },
+      {
+        text: "插槽解析",
+        link: "/Vue/Vue/数据监测",
+      },
+      {
+        text: "处理边界情况",
+        link: "/Vue/Vue/数据监测",
+      },
+    ],
+  },
+  {
     text: "可复用性",
     collapsed: true,
     items: [
@@ -89,22 +135,20 @@ export default [
         text: "filter",
         link: "/Vue/Vue/Filter",
       },
-      // {
-      //   text: "Mixins",
-      //   link: "/Vue/Vue/Mixins",
-      // },
-      // {
-      //   text: "Plugin",
-      //   link: "/Vue/Vue/Plugin",
-      // },
       {
         text: "自定义指令",
         link: "/Vue/Vue/自定义指令",
       },
-      // {
-      //   text: "Render & JSX",
-      //   link: "/Vue/Vue/directives",
-      // },
+    ],
+  },
+  {
+    text: "工具",
+    collapsed: true,
+    items: [
+      {
+        text: "SFC",
+        link: "/Vue/Vue/单文件组件",
+      },
     ],
   },
 ];
