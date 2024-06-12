@@ -1,13 +1,3 @@
-/*
- * @Author: zxk zhaoxinkun1124@gmail.com
- * @Date: 2024-05-05 11:28:20
- * @LastEditors: zxk zhaoxinkun1124@gmail.com
- * @LastEditTime: 2024-05-13 15:47:30
- * @FilePath: \VitePress\.vitepress\Sidebar\JavaScriptSidebar.ts
- * @Description:
- *
- * Copyright (c) 2024 by ${git_name_email}, All Rights Reserved.
- */
 export default [
   {
     text: "基础知识",

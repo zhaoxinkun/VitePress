@@ -13,12 +13,14 @@ import ECMAScriptSidebar from "./ECMAScriptSidebar";
 import Examples from "./Examples";
 import VScodeSidebar from "./VScodeSidebar";
 import VueSidebar from "./VueSidebar";
+import windowSidebar from "./windowSidebar";
 
 export default {
   // 拆分出去使用的语法
   // 有二级分类的
   "/JavaScript/JavaScript/": JavaScriptSidebar,
   "/JavaScript/ECMAScript/": ECMAScriptSidebar,
+  "/JavaScript/window/": windowSidebar,
   "/编程软件/VScode/": VScodeSidebar,
   "/Vue/Vue": VueSidebar,
   // 没有二级分类的

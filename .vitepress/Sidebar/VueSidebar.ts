@@ -42,6 +42,14 @@ export default [
         link: "/Vue/Vue/computed",
       },
       {
+        text: "directives",
+        link: "/Vue/Vue/directives",
+      },
+      {
+        text: "Mixins",
+        link: "/Vue/Vue/Mixins",
+      },
+      {
         text: "lifecycle",
         link: "/Vue/Vue/LifecycleHooks",
       },
@@ -136,8 +144,8 @@ export default [
         link: "/Vue/Vue/Filter",
       },
       {
-        text: "自定义指令",
-        link: "/Vue/Vue/自定义指令",
+        text: "Plugin",
+        link: "/Vue/Vue/Plugin",
       },
     ],
   },

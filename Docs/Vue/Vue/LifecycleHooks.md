@@ -2,40 +2,43 @@
 
 <!-- ## 目录
 
-- [创建阶段](#创建阶段)
-  - [beforeCreate（创建前）：](#beforeCreate创建前)
-  - [created（创建后）：](#created创建后)
-- [挂载阶段](#挂载阶段)
-  - [beforeMount（挂载前）：](#beforeMount挂载前)
-  - [mounted（挂载后）：](#mounted挂载后)
-- [更新阶段](#更新阶段)
-  - [beforeUpdate（更新前）：](#beforeUpdate更新前)
-  - [updated（更新后）：](#updated更新后)
-- [销毁阶段](#销毁阶段)
-  - [beforeDestroy（销毁前）：](#beforeDestroy销毁前)
-  - [destroyed（销毁后）：](#destroyed销毁后)
-- [keep-alive组件](#keep-alive组件)
-  - [activated（keep-alive）激活时：](#activatedkeep-alive激活时)
-  - [deactivated（keep-alive）失活时：](#deactivatedkeep-alive失活时)
-- [错误捕获](#错误捕获)
-  - [errorCaptured](#errorCaptured)
-- [开发者模式](#开发者模式)
-  - [renderTracked ](#renderTracked-)
-  - [renderTriggered](#renderTriggered)
-- [服务端渲染](#服务端渲染)
-  - [serverPrefetch ](#serverPrefetch-) -->
-- 又名：生命周期回调函数、生命周期函数、生命周期钩子。
-- 是什么：`Vue`在关键时刻帮我们调用的一些特殊名称的函数。
-- 生命周期函数的名字不可更改，但函数的具体内容是程序员根据需求编写的。
-- 生命周期函数中的`this`指向是`vm `或 组件实例对象。
+- [Lifecycle Hooks](#lifecycle-hooks)
+  - [目录](#目录)
+  - [创建阶段（Creation Phase）](#创建阶段creation-phase)
+    - [`beforeCreate（创建前）：`](#beforecreate创建前)
+    - [`created（创建后）：`](#created创建后)
+  - [挂载阶段（Mounting Phase）](#挂载阶段mounting-phase)
+    - [`beforeMount（挂载前）：`](#beforemount挂载前)
+    - [`mounted（挂载后）：`](#mounted挂载后)
+  - [更新阶段（Updating Phase）](#更新阶段updating-phase)
+    - [`beforeUpdate（更新前）：`](#beforeupdate更新前)
+    - [`updated（更新后）：`](#updated更新后)
+  - [销毁阶段（Destroying Phase）](#销毁阶段destroying-phase)
+    - [`beforeDestroy（销毁前）：`](#beforedestroy销毁前)
+    - [`destroyed（销毁后）：`](#destroyed销毁后)
+  - [`keep-alive`组件](#keep-alive组件)
+    - [`activated（keep-alive）激活时：`](#activatedkeep-alive激活时)
+    - [`deactivated（keep-alive）失活时：`](#deactivatedkeep-alive失活时)
+  - [错误捕获（Error Handling Phase）](#错误捕获error-handling-phase)
+    - [`errorCaptured`](#errorcaptured)
+  - [开发者模式](#开发者模式)
+    - [`renderTracked `](#rendertracked-)
+    - [`renderTriggered`](#rendertriggered)
+  - [服务端渲染](#服务端渲染)
+    - [`serverPrefetch `](#serverprefetch-)
+  - [父子组件生命周期钩子执行顺序](#父子组件生命周期钩子执行顺序)
+  - [父组件能监听到子组件的生命周期吗](#父组件能监听到子组件的生命周期吗)
+    - [方法一：使用自定义事件（`$emit`）](#方法一使用自定义事件emit)
+    - [方法二：使用事件总线（Event Bus）](#方法二使用事件总线event-bus)
+    - [方法三：调用父组件的方法](#方法三调用父组件的方法) -->
 
 > 📌每个 Vue 实例在被创建时都要经过一系列的初始化过程——例如，需要设置数据监听、编译模板、将实例挂载到 `DOM` 并在数据变化时更新 `DOM `等。同时在这个过程中也会运行一些叫做**生命周期钩子**的函数，这给了用户在不同阶段添加自己的代码的机会。
 
 不要在选项 `property `或回调上使用[箭头函数](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions "箭头函数")，比如 `created: () => console.log(this.a)` 或 `vm.$watch('a', newValue => this.myMethod())`。因为箭头函数并没有 `this`，`this` 会作为变量一直向上级词法作用域查找，直至找到为止，经常导致 `Uncaught TypeError: Cannot read property of undefined` 或 `Uncaught TypeError: this.myMethod is not a function` 之类的错误。
 
-![](image/image_MEayv5CSMG.png)
+![](image/image_n1lPC7AHd6.png)
 
-![](image/生命周期_ZHSipS2fQI.png)
+![](image/生命周期_6bv6V4vy_O.png)
 
 ```javascript
 const vm = new Vue({
@@ -161,7 +164,7 @@ const vm = new Vue({
 </html>
 ```
 
-## 创建阶段
+## 创建阶段（Creation Phase）
 
 ### `beforeCreate（创建前）：`
 
@@ -189,6 +192,9 @@ export default {
 
 - **作用：** 实例已经创建完成之后被调用。在这一步，实例已完成以下的配置：数据观测(data observer)，属性和方法的运算，`watch`/`event `事件回调。
 - **可以进行的操作：** 在此阶段，可以访问 `data` 和 `methods`，但虚拟DOM和挂载阶段还未开始。
+- **本人推荐在 created 钩子函数中调用异步请求，因为在 created 钩子函数中调用异步请求有以下优点：**
+  - 能更快获取到服务端数据，减少页面 loading 时间；
+  - ssr 不支持 beforeMount 、mounted 钩子函数，所以放在 created 中有助于一致性；
 - **注意事项：** 适合进行数据处理、异步操作、调用API，异步请求等操作。
 
 ```javascript
@@ -210,7 +216,7 @@ export default {
 }
 ```
 
-## 挂载阶段
+## 挂载阶段（Mounting Phase）
 
 ### `beforeMount（挂载前）：`
 
@@ -233,8 +239,11 @@ export default {
 
 ### `mounted（挂载后）：`
 
-- **作用：** 在挂载到`DOM`完成后被调用。此时\*\*组件`DOM `****已经渲染完成，可以操作真实的 ****`DOM`****（避免）。进行****`DOM`\*\***操作或发起异步请求。**
-- **可以进行的操作：** 在此阶段，组件已经被挂载到 `DOM`，可以访问到组件的 `$el`。或发起异步请求。 发送`ajax`请求、启动定时器、绑定自定义事件、订阅消息等【初始化操作】
+- **作用：** 在挂载到`DOM`完成后被调用。也就是说，当模板渲染成html并被插入到页面中之后，mounted函数就会被触发执行。此时\*\*组件`DOM `****已经渲染完成，可以操作真实的 ****`DOM`****（避免）。进行****`DOM`\*\***操作或发起异步请求。**
+- **可以进行的操作：** 在此阶段，组件已经被挂载到 `DOM`，可以访问到组件的 `$el`。
+  - 发起异步请求。 发送`ajax`请求
+  - 启动定时器、绑定自定义事件、订阅消息、事件监听等【初始化操作】
+  - 初始化第三方库或插件：通常在`mounted`函数中会初始化一些第三方库或插件，比如`echarts`、`swiper`、`video.js`等等。
 - **注意事项：** 通常用于执行一些需要 `DOM `元素的操作，如启动定时器、发起网络请求等。
 
 ```javascript
@@ -251,7 +260,7 @@ export default {
 }
 ```
 
-## 更新阶段
+## 更新阶段（Updating Phase）
 
 ### `beforeUpdate（更新前）：`
 
@@ -288,12 +297,16 @@ export default {
 }
 ```
 
-## 销毁阶段
+## 销毁阶段（Destroying Phase）
 
 ### `beforeDestroy（销毁前）：`
 
-- **作用：** **在实例销毁之前调用。在这一步，实例仍然完全可用。**
-- **可以进行的操作：** 在此阶段可以进行清理工作，清除定时器、解绑自定义事件、取消订阅消息等【收尾工作】
+- **作用：****在实例销毁之前调用。在这一步，实例仍然完全可用。** 可以访问和操作组件的属性和方法。但在`destroyed `钩子函数之后，组件实例已经被完全销毁，无法再访问其属性和方法。
+- **可以进行的操作：** 在此阶段可以进行清理工作【收尾工作】以避免内存泄漏或不必要的资源占用。
+  - 取消订阅：如果组件在订阅了某些事件或消息后，需要在销毁前取消订阅，以避免内存泄漏。
+  - 清除定时器：如果组件在使用定时器执行某些任务，应该在销毁前清除这些定时器，以避免资源浪费。
+  - 解绑事件监听器：如果组件在绑定了事件监听器后，需要在销毁前解绑这些事件监听器，以免造成事件泄漏。
+  - 清除其他资源：根据组件使用的具体情况，可能还需要清除其他的资源，例如关闭网络连接、释放占用的内存等。
 - **注意事项：** 在此阶段仍然可以访问实例和数据，但不会再触发更新。一般不会在`beforeDestroy`操作数据，因为即便操作数据，也不会再触发更新流程了。
 
 ```javascript
@@ -378,7 +391,7 @@ export default {
 
 当组件被创建、挂载、更新或销毁时，对应的钩子函数会被调用，你可以在这些钩子函数中执行相应的逻辑和操作。这些生命周期钩子函数为你提供了在不同阶段处理数据、`DOM`操作、异步请求等的机会。
 
-## 错误捕获
+## 错误捕获（Error Handling Phase）
 
 ### `errorCaptured`
 
@@ -557,3 +570,232 @@ type DebuggerEvent = {
   }
   ```
 - **参考**[服务端渲染](https://cn.vuejs.org/guide/scaling-up/ssr.html "服务端渲染")
+
+## 父子组件生命周期钩子执行顺序
+
+Vue 的父组件和子组件生命周期钩子函数执行顺序可以归类为以下 4 部分：
+
+- 加载渲染过程
+
+  父 beforeCreate -> 父 created -> 父 beforeMount -> 子 beforeCreate -> 子 created -> 子 beforeMount -> 子 mounted -> 父 mounted
+- 子组件更新过程
+
+  父 beforeUpdate -> 子 beforeUpdate -> 子 updated -> 父 updated
+- 父组件更新过程
+
+  父 beforeUpdate -> 父 updated
+- 销毁过程
+
+  父 beforeDestroy -> 子 beforeDestroy -> 子 destroyed -> 父 destroyed
+
+## 父组件能监听到子组件的生命周期吗
+
+在Vue.js中，父组件不能直接监听子组件的生命周期钩子，但可以通过一些技巧间接实现这一功能。例如，可以使用事件总线、`$emit` 事件或直接调用父组件的方法来通知父组件子组件的生命周期变化。下面是几种常见的实现方法：
+
+### 方法一：使用自定义事件（`$emit`）
+
+子组件在生命周期钩子中使用 `$emit` 发送自定义事件，父组件通过监听这些事件来间接获知子组件的生命周期变化。
+
+**子组件（ChildComponent.vue）**
+
+```vue
+<template>
+  <div>
+    Child Component
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'ChildComponent',
+  created() {
+    this.$emit('child-created');
+  },
+  mounted() {
+    this.$emit('child-mounted');
+  },
+  destroyed() {
+    this.$emit('child-destroyed');
+  }
+};
+</script>
+```
+
+**父组件（ParentComponent.vue）**
+
+```vue
+<template>
+  <div>
+    Parent Component
+    <ChildComponent @child-created="onChildCreated" @child-mounted="onChildMounted" @child-destroyed="onChildDestroyed"/>
+  </div>
+</template>
+
+<script>
+import ChildComponent from './ChildComponent.vue';
+
+export default {
+  name: 'ParentComponent',
+  components: {
+    ChildComponent
+  },
+  methods: {
+    onChildCreated() {
+      console.log('Child component created');
+    },
+    onChildMounted() {
+      console.log('Child component mounted');
+    },
+    onChildDestroyed() {
+      console.log('Child component destroyed');
+    }
+  }
+};
+</script>
+```
+
+### 方法二：使用事件总线（Event Bus）
+
+使用事件总线来在子组件的生命周期钩子中发送事件，父组件通过事件总线监听这些事件。
+
+**事件总线（eventBus.js）**
+
+```javascript
+import Vue from 'vue';
+export const EventBus = new Vue();
+```
+
+**子组件（ChildComponent.vue）**
+
+```vue
+<template>
+  <div>
+    Child Component
+  </div>
+</template>
+
+<script>
+import { EventBus } from './eventBus';
+
+export default {
+  name: 'ChildComponent',
+  created() {
+    EventBus.$emit('child-created');
+  },
+  mounted() {
+    EventBus.$emit('child-mounted');
+  },
+  destroyed() {
+    EventBus.$emit('child-destroyed');
+  }
+};
+</script>
+```
+
+**父组件（ParentComponent.vue）**
+
+```vue
+<template>
+  <div>
+    Parent Component
+    <ChildComponent/>
+  </div>
+</template>
+
+<script>
+import ChildComponent from './ChildComponent.vue';
+import { EventBus } from './eventBus';
+
+export default {
+  name: 'ParentComponent',
+  components: {
+    ChildComponent
+  },
+  created() {
+    EventBus.$on('child-created', this.onChildCreated);
+    EventBus.$on('child-mounted', this.onChildMounted);
+    EventBus.$on('child-destroyed', this.onChildDestroyed);
+  },
+  beforeDestroy() {
+    EventBus.$off('child-created', this.onChildCreated);
+    EventBus.$off('child-mounted', this.onChildMounted);
+    EventBus.$off('child-destroyed', this.onChildDestroyed);
+  },
+  methods: {
+    onChildCreated() {
+      console.log('Child component created');
+    },
+    onChildMounted() {
+      console.log('Child component mounted');
+    },
+    onChildDestroyed() {
+      console.log('Child component destroyed');
+    }
+  }
+};
+</script>
+```
+
+### 方法三：调用父组件的方法
+
+在子组件的生命周期钩子中，直接调用父组件的方法来通知父组件。
+
+**子组件（ChildComponent.vue）**
+
+```vue
+<template>
+  <div>
+    Child Component
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'ChildComponent',
+  created() {
+    this.$parent.onChildCreated();
+  },
+  mounted() {
+    this.$parent.onChildMounted();
+  },
+  destroyed() {
+    this.$parent.onChildDestroyed();
+  }
+};
+</script>
+```
+
+**父组件（ParentComponent.vue）**
+
+```vue
+<template>
+  <div>
+    Parent Component
+    <ChildComponent/>
+  </div>
+</template>
+
+<script>
+import ChildComponent from './ChildComponent.vue';
+
+export default {
+  name: 'ParentComponent',
+  components: {
+    ChildComponent
+  },
+  methods: {
+    onChildCreated() {
+      console.log('Child component created');
+    },
+    onChildMounted() {
+      console.log('Child component mounted');
+    },
+    onChildDestroyed() {
+      console.log('Child component destroyed');
+    }
+  }
+};
+</script>
+```
+
+> 📌虽然Vue.js没有直接提供父组件监听子组件生命周期钩子的API，但可以通过自定义事件、事件总线或者直接调用父组件的方法来实现这一需求。这些方法都能够在一定程度上帮助父组件了解子组件的生命周期变化，根据具体的需求选择适合的方法进行实现。

@@ -2,28 +2,66 @@
 
 <!-- ## 目录
 
-- [Math.abs(x)](#Mathabsx)
-- [Math.ceil(x)](#Mathceilx)
-- [Math.floor(x)](#Mathfloorx)
-- [Math.round(x)](#Mathroundx)
-- [Math.max(...args)](#Mathmaxargs)
-- [Math.min(...args)](#Mathminargs)
-- [Math.pow(x, y)](#Mathpowx-y)
-- [Math.sqrt(x)](#Mathsqrtx)
-- [Math.random()](#Mathrandom)
-- [Math.toFixed（）](#MathtoFixed)
-- [Math.PI](#MathPI)
-- [Math.toPrecision()](#MathtoPrecision)
-- [Math.trunc(x)(ES6)](#MathtruncxES6)
-- [Math.sign()(ES6)](#MathsignES6)
-- [Math.cbrt()(ES6)](#MathcbrtES6)
-- [Math.log2()(ES6)](#Mathlog2ES6)
-- [Math.log10()(ES6)](#Mathlog10ES6)
-- [随机色块](#随机色块)
-- [取值区间](#取值区间)
-- [API](#API) -->
+- [Math](#math)
+  - [目录](#目录)
+  - [API预览](#api预览)
+  - [`Math.abs(x)`](#mathabsx)
+  - [`Math.ceil(x)`](#mathceilx)
+  - [`Math.floor(x)`](#mathfloorx)
+  - [`Math.round(x)`](#mathroundx)
+  - [`Math.max(...args)`](#mathmaxargs)
+  - [`Math.min(...args)`](#mathminargs)
+  - [`Math.pow(x, y)`](#mathpowx-y)
+  - [`Math.sqrt(x)`](#mathsqrtx)
+  - [`Math.random()`](#mathrandom)
+  - [`Math.toFixed（）`](#mathtofixed)
+  - [`Math.PI`](#mathpi)
+  - [`Math.toPrecision()`](#mathtoprecision)
+  - [`Math.trunc(x)`(ES6)](#mathtruncxes6)
+  - [随机色块](#随机色块)
+  - [取值区间](#取值区间) -->
 
 > 📌不是一种数据类型，是一个内置对象
+
+## API预览
+
+这些都是 `Math` 对象的方法，下面为您解释每个方法的作用：
+
+- `abs(x)`：返回指定数字的绝对值。例如，`Math.abs(-10)` 的结果是 `10`。
+- `acos(x)`：返回指定数字的反余弦值（弧度）。例如，`Math.acos(0.5)` 的结果是 `1.0471975511965979`。
+- `acosh(x)`：返回指定数字的反双曲余弦值。例如，`Math.acosh(2)` 的结果是 `1.3169578969248166`。
+- `asin(x)`：返回指定数字的反正弦值（弧度）。例如，`Math.asin(0.5)` 的结果是 `0.5235987755982989`。
+- `asinh(x)`：返回指定数字的反双曲正弦值。例如，`Math.asinh(2)` 的结果是 `1.4436354751788103`。
+- `atan(x)`：返回指定数字的反正切值（弧度）。例如，`Math.atan(1)` 的结果是 `0.7853981633974483`。
+- `atan2(y, x)`：返回给定的 X 坐标和 Y 坐标的反正切值（弧度）。例如，`Math.atan2(1, 1)` 的结果是 `0.7853981633974483`。
+- `atanh(x)`：返回指定数字的反双曲正切值。例如，`Math.atanh(0.5)` 的结果是 `0.5493061443340549`。
+- `cbrt(x)`：返回指定数字的立方根。例如，`Math.cbrt(27)` 的结果是 `3`。
+- `ceil(x)`：返回大于或等于指定数字的最小整数。例如，`Math.ceil(4.3)` 的结果是 `5`。
+- `clz32(x)`：返回一个数字在转为 32 位无符号整数后，前导零的个数。例如，`Math.clz32(7)` 的结果是 `29`。
+- `cos(x)`：返回指定角度的余弦值。例如，`Math.cos(Math.PI)` 的结果是 `-1`。
+- `cosh(x)`：返回指定数字的双曲余弦值。例如，`Math.cosh(0)` 的结果是 `1`。
+- `exp(x)`：返回指定数字的指数值。例如，`Math.exp(1)` 的结果是 `2.718281828459045`。
+- `expm1(x)`：返回 Math.exp(x) - 1 的值。例如，`Math.expm1(1)` 的结果是 `1.718281828459045`。
+- `floor(x)`：返回小于或等于指定数字的最大整数。例如，`Math.floor(4.9)` 的结果是 `4`。
+- `fround(x)`：返回指定数字的单精度浮点数表示。例如，`Math.fround(1.337)` 的结果是 `1.3370000123977661`。
+- `hypot(...args)`：返回一组数字的平方和的平方根。例如，`Math.hypot(3, 4)` 的结果是 `5`。
+- `imul(x, y)`：返回两个数的 32 位带符号整数乘法结果。例如，`Math.imul(2, 3)` 的结果是 `6`。
+- `log(x)`：返回指定数字的自然对数（以 e 为底）。例如，`Math.log(Math.E)` 的结果是 `1`。
+- `log1p(x)`：返回 Math.log(1 + x) 的值。例如，`Math.log1p(Math.E - 1)` 的结果是 `1`。
+- `log2(x)`：返回以 2 为底的指定数字的对数。例如，`Math.log2(8)` 的结果是 `3`。
+- `log10(x)`：返回以 10 为底的指定数字的对数。例如，`Math.log10(100)` 的结果是 `2`。
+- `max(...args)`：返回一组数字中的最大值。例如，`Math.max(10, 5, 8)` 的结果是 `10`。
+- `min(...args)`：返回一组数字中的最小值。例如，`Math.min(10, 5, 8)` 的结果是 `5`。
+- `pow(x, y)`：返回 x 的 y 次幂。例如，`Math.pow(2, 3)` 的结果是 `8`。
+- `random()`：返回一个 0 到 1 之间的随机数。例如，`Math.random()` 的结果是 `0.456789123`。
+- `round(x)`：返回指定数字的四舍五入值。例如，`Math.round(4.5)` 的结果是 `5`。
+- `sign(x)`：返回指定数字的符号（正、负或零）。例如，`Math.sign(-10)` 的结果是 `-1`。
+- `sin(x)`：返回指定角度的正弦值。例如，`Math.sin(Math.PI / 2)` 的结果是 `1`。
+- `sinh(x)`：返回指定数字的双曲正弦值。例如，`Math.sinh(0)` 的结果是 `0`。
+- `sqrt(x)`：返回指定数字的平方根。例如，`Math.sqrt(16)` 的结果是 `4`。
+- `tan(x)`：返回指定角度的正切值。例如，`Math.tan(0)` 的结果是 `0`。
+- `tanh(x)`：返回指定数字的双曲正切值。例如，`Math.tanh(0)` 的结果是 `0`。
+- `trunc(x)`：去除指定数字的小数部分，返回整数部分。例如，`Math.trunc(4.9)` 的结果是 `4`。
 
 ## `Math.abs(x)`
 
@@ -132,7 +170,7 @@ console.log(Math.PI) // 3.141592653589793
 
 - 用于将数字转换为指定精度的字符串表示。该方法接受一个参数，指定返回字符串的总有效位数，包括整数部分和小数部分。
 
-```css
+```javascript
 const number = 123.456789;
 
 console.log(number.toPrecision(5)); // 输出 "123.46"
@@ -173,14 +211,6 @@ console.log(Math.trunc('hello')); // 输出 NaN，无法将字符串转换为数
 
 在实际应用中，`Math.trunc()` 常用于对浮点数进行取整操作，得到其整数部分，而忽略小数部分。
 
-## `Math.sign()`(ES6)
-
-## `Math.cbrt()`(ES6)
-
-## `Math.log2()`(ES6)
-
-## `Math.log10()`(ES6)
-
 ## 随机色块
 
 ```javascript
@@ -216,45 +246,4 @@ console.log(Math.trunc('hello')); // 输出 NaN，无法将字符串转换为数
 //公式   ：min+Math.floor（Math.random（）*（Max-min））
 //想要取到5，那就是
 //公式   ：min+Math.floor（Math.random（）*（Max-min+1））
-
 ```
-
-## API
-
-这些都是 `Math` 对象的方法，下面为您解释每个方法的作用：
-
-- `abs(x)`：返回指定数字的绝对值。例如，`Math.abs(-10)` 的结果是 `10`。
-- `acos(x)`：返回指定数字的反余弦值（弧度）。例如，`Math.acos(0.5)` 的结果是 `1.0471975511965979`。
-- `acosh(x)`：返回指定数字的反双曲余弦值。例如，`Math.acosh(2)` 的结果是 `1.3169578969248166`。
-- `asin(x)`：返回指定数字的反正弦值（弧度）。例如，`Math.asin(0.5)` 的结果是 `0.5235987755982989`。
-- `asinh(x)`：返回指定数字的反双曲正弦值。例如，`Math.asinh(2)` 的结果是 `1.4436354751788103`。
-- `atan(x)`：返回指定数字的反正切值（弧度）。例如，`Math.atan(1)` 的结果是 `0.7853981633974483`。
-- `atan2(y, x)`：返回给定的 X 坐标和 Y 坐标的反正切值（弧度）。例如，`Math.atan2(1, 1)` 的结果是 `0.7853981633974483`。
-- `atanh(x)`：返回指定数字的反双曲正切值。例如，`Math.atanh(0.5)` 的结果是 `0.5493061443340549`。
-- `cbrt(x)`：返回指定数字的立方根。例如，`Math.cbrt(27)` 的结果是 `3`。
-- `ceil(x)`：返回大于或等于指定数字的最小整数。例如，`Math.ceil(4.3)` 的结果是 `5`。
-- `clz32(x)`：返回一个数字在转为 32 位无符号整数后，前导零的个数。例如，`Math.clz32(7)` 的结果是 `29`。
-- `cos(x)`：返回指定角度的余弦值。例如，`Math.cos(Math.PI)` 的结果是 `-1`。
-- `cosh(x)`：返回指定数字的双曲余弦值。例如，`Math.cosh(0)` 的结果是 `1`。
-- `exp(x)`：返回指定数字的指数值。例如，`Math.exp(1)` 的结果是 `2.718281828459045`。
-- `expm1(x)`：返回 Math.exp(x) - 1 的值。例如，`Math.expm1(1)` 的结果是 `1.718281828459045`。
-- `floor(x)`：返回小于或等于指定数字的最大整数。例如，`Math.floor(4.9)` 的结果是 `4`。
-- `fround(x)`：返回指定数字的单精度浮点数表示。例如，`Math.fround(1.337)` 的结果是 `1.3370000123977661`。
-- `hypot(...args)`：返回一组数字的平方和的平方根。例如，`Math.hypot(3, 4)` 的结果是 `5`。
-- `imul(x, y)`：返回两个数的 32 位带符号整数乘法结果。例如，`Math.imul(2, 3)` 的结果是 `6`。
-- `log(x)`：返回指定数字的自然对数（以 e 为底）。例如，`Math.log(Math.E)` 的结果是 `1`。
-- `log1p(x)`：返回 Math.log(1 + x) 的值。例如，`Math.log1p(Math.E - 1)` 的结果是 `1`。
-- `log2(x)`：返回以 2 为底的指定数字的对数。例如，`Math.log2(8)` 的结果是 `3`。
-- `log10(x)`：返回以 10 为底的指定数字的对数。例如，`Math.log10(100)` 的结果是 `2`。
-- `max(...args)`：返回一组数字中的最大值。例如，`Math.max(10, 5, 8)` 的结果是 `10`。
-- `min(...args)`：返回一组数字中的最小值。例如，`Math.min(10, 5, 8)` 的结果是 `5`。
-- `pow(x, y)`：返回 x 的 y 次幂。例如，`Math.pow(2, 3)` 的结果是 `8`。
-- `random()`：返回一个 0 到 1 之间的随机数。例如，`Math.random()` 的结果是 `0.456789123`。
-- `round(x)`：返回指定数字的四舍五入值。例如，`Math.round(4.5)` 的结果是 `5`。
-- `sign(x)`：返回指定数字的符号（正、负或零）。例如，`Math.sign(-10)` 的结果是 `-1`。
-- `sin(x)`：返回指定角度的正弦值。例如，`Math.sin(Math.PI / 2)` 的结果是 `1`。
-- `sinh(x)`：返回指定数字的双曲正弦值。例如，`Math.sinh(0)` 的结果是 `0`。
-- `sqrt(x)`：返回指定数字的平方根。例如，`Math.sqrt(16)` 的结果是 `4`。
-- `tan(x)`：返回指定角度的正切值。例如，`Math.tan(0)` 的结果是 `0`。
-- `tanh(x)`：返回指定数字的双曲正切值。例如，`Math.tanh(0)` 的结果是 `0`。
-- `trunc(x)`：去除指定数字的小数部分，返回整数部分。例如，`Math.trunc(4.9)` 的结果是 `4`。

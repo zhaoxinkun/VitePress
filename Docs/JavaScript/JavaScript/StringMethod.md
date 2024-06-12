@@ -91,7 +91,7 @@ console.log(str02.lastIndexOf("o", -7))//-1
 console.log(str02.lastIndexOf("o", 0.5))//-1
 ```
 
-- `String.includes(substring,number)`：判断字符串是否包含指定子字符串，\*\*返回布尔值，区分大小写  \*\***ES6新增**
+- `String.includes(substring,number)`：判断字符串是否包含指定子字符串，**返回布尔值，区分大小写  ES6新增**
 
 ```javascript
 let str03 = "hello world";
@@ -113,7 +113,7 @@ console.log(str04.search("o",-5)) //4
 console.log(str04.search("o",0.5)) //4
 ```
 
-- `String.match()`：**使用正则表达式在字符串中查找匹配项。它返回一个数组，其中包含匹配的字符串。如果未找到匹配，则返回值为 null**
+- `String.match()`：**使用正则表达式在字符串中查找匹配项。它返回一个数组，如果有/g则返回其中包含匹配的字符串。如果未找到匹配，则返回值为 null**
 
 ```javascript
 let str = 'JavaScript is a powerful language';
@@ -121,7 +121,7 @@ let matches = str.match(/a/g);
 console.log(matches); // 输出 [ 'a', 'a', 'a', 'a', 'a' ]，字符串中所有匹配正则表达式 /a/g 的子字符串
 ```
 
-- `String.matchAll()`：使用正则表达式在字符串中查找所有匹配项。**它****返回一个迭代器对象，可以通过循环来访问所有匹配的详细信息****。没有找到就返回空数组。ES2020**
+- `String.matchAll()`：使用正则表达式在字符串中查找所有匹配项。**没有使用/g就报错，它返回一个迭代器对象，可以通过循环来访问所有匹配的详细信息。没有找到就返回空数组。ES2020**
 
 ```javascript
 let str = 'JavaScript is a powerful language';
@@ -134,7 +134,7 @@ for (let match of matches) {
 
 ## `根据索引找字符`
 
-- `str.charAt`是找到字符串中指定索引位置的内容返回，如果没有对应的索引，那么就会返回 空字符串（ES5）
+- `str.charAt`是找到字符串中指定索引位置的内容返回，**如果没有对应的索引，那么就会返回空字符串（ES5）**`charAt()` 不支持负数索引，返回空字符串（""）用于索引超出范围的情况
 
 ```javascript
 //根据索引找字符串
@@ -157,18 +157,13 @@ console.log(str06[-3])  //undefined
 console.log(str06[0.3])  //undefined
 ```
 
-- `Str.at()`(ES2022)
+- `Str.at()`(ES2022)\*\*`at()`的索引可以是负数，****`at()`****返回`undefined`\*\***用于处理索引越界情况**
 
 ```javascript
 let str06 = "hello world"
 console.log(str06.at(3)) //l
 console.log(str06.at(-3)) //r
 ```
-
-区别：
-
-- `Str.charAt()` 返回空字符串（""）用于索引超出范围的情况，而 `at()` 返回 `undefined`
-- `at()` 的索引可以是负数，而 `charAt()` 不支持负数索引
 
 ## `Unicode `
 
@@ -240,7 +235,7 @@ console.log(s.substring(3, -4));  //直接将负数转换为0
 console.log(s.substring(0, 3));
 ```
 
-- `split(separator，number)`：将字符串按照**指定分隔符拆分为数组，number的含义就是最后拿到的结果的最大长度**
+- `split(separator，number)`：**将字符串按照指定分隔符拆分为数组，number的含义就是最后拿到的结果的最大长度**
 
 ```javascript
 // split(separator，number)将字符串按照指定分隔符拆分为数组，number的含义就是最后拿到的结果的最大长度。
@@ -248,17 +243,6 @@ var s = "hello world";
 console.log(s.split(' '))  //[ 'hello', 'world' ]
 console.log("hello:wor:ld".split(':'))  //[ 'hello', 'wor', 'ld' ]
 console.log("hello:wor:ld".split(':', 2))  //[ 'hello', 'wor' ]
-```
-
-- `substr(start, length)`：返回从**指定位置开始指定长度****的子字符串包含end。**** 已弃用**
-
-```javascript
- // substr(start,length) 方法可在字符串中抽取从开始下标开始的指定数目的字符 
-var s = "hello world";
-console.log(s.substr(2, 6)); //llo wo
-console.log(s.substr(1, 4)); //
-console.log(s.substr(2)); //llo world
-
 ```
 
 ## `转换方法`
@@ -316,7 +300,7 @@ console.log(Str3, typeof Str3);  //123.154  string
 
 ## `替换方法`
 
-- \*\*`Str.replace(oldValue, newValue)`：用新的字符串替换旧的字符串，\*\*​**并返回替换后的新字符串**
+- **`Str.replace(oldValue, newValue)`：用新的字符串替换旧的字符串，并返回替换后的新字符串ES2021**
 - \*\*`Str.replaceAll() `\*\***ES2021**
 
 ```javascript
@@ -335,16 +319,12 @@ text = text.replaceAll("Cats","Dogs");
 text = text.replaceAll("cats","dogs");
 ```
 
-`replaceAll()` 方法允许您指定要替换的正则表达式而不是字符串
-
-如果参数是正则表达式，则必须设置全局标志（g），否则会抛出TypeError
+`replaceAll()` 方法允许您指定要替换的正则表达式而不是字符串如果参数是正则表达式，则必须设置全局标志（g），否则会抛出TypeError
 
 ```javascript
 text = text.replaceAll(/Cats/g,"Dogs");
 text = text.replaceAll(/cats/g,"dogs");
 ```
-
-`replaceAll()` is an [ES2021](https://www.w3schools.com/js/js_2021.asp "ES2021") feature.`replaceAll()` 是ES2021特性
 
 `replaceAll()` does not work in Internet Explorer.`replaceAll()` 在Internet Explorer中不起作用
 
@@ -371,8 +351,8 @@ console.log(Str5.trimEnd());//   Hello world, Hello world, Hello world, Hello wo
 
 ## `首尾判断`
 
-- `Str.startsWith(substring)`：判断字符串是否以指定子字符串开头，从第几个开始监测，返回布尔值。 ES6新增
-- `Str.endsWith(substring)`：判断字符串是否以指定子字符串结尾，从第几个开始监测，返回布尔值。 ES6新增
+- `Str.startsWith(substring)`：判断字符串**是否以指定子字符串开头，从第几个开始监测，返回布尔值。 ES6新增**
+- `Str.endsWith(substring)`：判断字符串**是否以指定子字符串结尾，从第几个开始监测，返回布尔值。 ES6新增**
 
 ```javascript
 // 首尾判断
@@ -408,7 +388,7 @@ console.log(str2.concat(', ', str1));
 // Expected output: "World, Hello"
 ```
 
-- `${str}` 拼接字符串方法
+- `${str}` 拼接字符串方法，模板字符串中有介绍
 
 ```javascript
  //模板字符串 

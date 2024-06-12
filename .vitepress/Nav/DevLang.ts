@@ -31,6 +31,7 @@ export default [
       { text: "ArkTS", link: "/JavaScript/ArkTS/111" },
       { text: "jQuery", link: "/JavaScript/jQuery/111" },
       { text: "Ajax", link: "/JavaScript/Ajax/111" },
+      { text: "window", link: "/JavaScript/window/index" },
     ],
   },
   { text: "MySQL", link: "/WebDoc/WebDoc" },
