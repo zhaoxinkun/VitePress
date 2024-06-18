@@ -1,6 +1,6 @@
 # sessionStorage
 
-## 目录
+<!-- ## 目录
 
 - [sessionStorage](#sessionstorage)
   - [目录](#目录)
@@ -8,7 +8,7 @@
   - [SessionStorage 的特性](#sessionstorage-的特性)
   - [常用方法](#常用方法)
   - [实际场景](#实际场景)
-  - [使用示例](#使用示例)
+  - [使用示例](#使用示例) -->
 
 ## 什么是 SessionStorage？
 

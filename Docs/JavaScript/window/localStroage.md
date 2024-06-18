@@ -1,6 +1,6 @@
 # localStroage
 
-## 目录
+<!-- ## 目录
 
 - [localStroage](#localstroage)
   - [目录](#目录)
@@ -8,7 +8,7 @@
   - [LocalStorage 的特性](#localstorage-的特性)
   - [常用方法](#常用方法)
   - [应用场景](#应用场景)
-  - [使用示例](#使用示例)
+  - [使用示例](#使用示例) -->
 
 ## 什么是 LocalStorage
 

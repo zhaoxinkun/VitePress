@@ -44,15 +44,15 @@ export default [
     items: [
       {
         text: "字符串定义",
-        link: "/JavaScript/JavaScript/StringCreate",
+        link: "/JavaScript/JavaScript/String/StringCreate",
       },
       {
         text: "字符串方法",
-        link: "/JavaScript/JavaScript/StringMethod",
+        link: "/JavaScript/JavaScript/String/StringMethod",
       },
       {
         text: "字符串迭代",
-        link: "/JavaScript/JavaScript/StringLteration",
+        link: "/JavaScript/JavaScript/String/StringLteration",
       },
     ],
   },
@@ -79,6 +79,44 @@ export default [
       {
         text: "Date",
         link: "/JavaScript/JavaScript/Date",
+      },
+    ],
+  },
+  {
+    text: "Promise",
+    collapsed: true,
+    items: [
+      {
+        text: "Promise 引入",
+        link: "/JavaScript/JavaScript/Promise/Promise 引入",
+      },
+      {
+        text: "Promise 状态",
+        link: "/JavaScript/JavaScript/Promise/Promise 状态",
+      },
+      {
+        text: "Promise API",
+        link: "/JavaScript/JavaScript/Promise/Promise API",
+      },
+      {
+        text: "Promise 案例",
+        link: "/JavaScript/JavaScript/Promise/Promise 案例",
+      },
+      {
+        text: "Promise 修改状态",
+        link: "/JavaScript/JavaScript/Promise/Promise 修改状态",
+      },
+      {
+        text: "Promise 多个回调",
+        link: "/JavaScript/JavaScript/Promise/Promise 多个回调",
+      },
+      {
+        text: "Promise 执行顺序",
+        link: "/JavaScript/JavaScript/Promise/Promise 执行顺序",
+      },
+      {
+        text: "Promise 中断链式",
+        link: "/JavaScript/JavaScript/Promise/Promise 中断链式",
       },
     ],
   },

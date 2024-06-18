@@ -27,7 +27,7 @@ export default [
       //导航栏子项子项
       { text: "JavaScript", link: "/JavaScript/JavaScript/index" },
       { text: "ECMAScript", link: "/JavaScript/ECMAScript/index" },
-      { text: "TypeScript", link: "/JavaScript/TypeScript/111" },
+      { text: "TypeScript", link: "/JavaScript/TypeScript/index" },
       { text: "ArkTS", link: "/JavaScript/ArkTS/111" },
       { text: "jQuery", link: "/JavaScript/jQuery/111" },
       { text: "Ajax", link: "/JavaScript/Ajax/111" },

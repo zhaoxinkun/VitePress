@@ -4,6 +4,18 @@ export default [
     collapsed: true,
   },
   {
+    text: "相关链接",
+    link: "/Vue/Vue/01相关链接",
+  },
+  {
+    text: "基本介绍",
+    link: "/Vue/Vue/02基本介绍",
+  },
+  {
+    text: "模型介绍",
+    link: "/Vue/Vue/03模型介绍",
+  },
+  {
     text: "浅谈原理",
     collapsed: true,
     items: [
@@ -23,35 +35,35 @@ export default [
     items: [
       {
         text: "el",
-        link: "/Vue/Vue/el",
+        link: "/Vue/Vue/01el",
       },
       {
         text: "data",
-        link: "/Vue/Vue/data",
+        link: "/Vue/Vue/02data",
       },
       {
         text: "watch",
-        link: "/Vue/Vue/watch",
+        link: "/Vue/Vue/03watch",
       },
       {
         text: "methods",
-        link: "/Vue/Vue/methods",
+        link: "/Vue/Vue/04methods",
       },
       {
         text: "computed",
-        link: "/Vue/Vue/computed",
+        link: "/Vue/Vue/05computed",
       },
       {
         text: "directives",
-        link: "/Vue/Vue/directives",
+        link: "/Vue/Vue/06directives",
       },
       {
         text: "Mixins",
-        link: "/Vue/Vue/Mixins",
+        link: "/Vue/Vue/07Mixins",
       },
       {
         text: "lifecycle",
-        link: "/Vue/Vue/LifecycleHooks",
+        link: "/Vue/Vue/08LifecycleHooks",
       },
     ],
   },
@@ -99,15 +111,15 @@ export default [
       },
       {
         text: "extend",
-        link: "/Vue/Vue/extend",
+        link: "/Vue/Vue/01extend",
       },
       {
         text: "全局组件",
-        link: "/Vue/Vue/全局组件",
+        link: "/Vue/Vue/02全局组件",
       },
       {
         text: "局部组件",
-        link: "/Vue/Vue/局部组件",
+        link: "/Vue/Vue/03局部组件",
       },
       {
         text: "函数式组件",

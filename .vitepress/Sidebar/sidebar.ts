@@ -10,6 +10,7 @@
  */
 import JavaScriptSidebar from "./JavaScriptSidebar";
 import ECMAScriptSidebar from "./ECMAScriptSidebar";
+import TypeScriptSidebar from "./TypeScriptSidebar";
 import Examples from "./Examples";
 import VScodeSidebar from "./VScodeSidebar";
 import VueSidebar from "./VueSidebar";
@@ -20,6 +21,7 @@ export default {
   // 有二级分类的
   "/JavaScript/JavaScript/": JavaScriptSidebar,
   "/JavaScript/ECMAScript/": ECMAScriptSidebar,
+  "/JavaScript/TypeScript/": TypeScriptSidebar,
   "/JavaScript/window/": windowSidebar,
   "/编程软件/VScode/": VScodeSidebar,
   "/Vue/Vue": VueSidebar,
