@@ -4,6 +4,7 @@ export default [
     text: "HTML", //导航栏子项名称
     items: [
       //（三级）导航栏子项子项
+      { text: "HTML", link: "/HTML/HTML/index" },
       { text: "HTML5", link: "/WebDoc/WebDoc" },
       { text: "HTML5 Canvas", link: "/WebDoc/WebDoc" },
       { text: "HTML5 WebGL", link: "/WebDoc/WebDoc" },

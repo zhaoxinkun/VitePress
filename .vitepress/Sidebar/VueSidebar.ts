@@ -35,35 +35,35 @@ export default [
     items: [
       {
         text: "el",
-        link: "/Vue/Vue/01el",
+        link: "/Vue/Vue/实例配置项/01el",
       },
       {
         text: "data",
-        link: "/Vue/Vue/02data",
+        link: "/Vue/Vue/实例配置项/02data",
       },
       {
         text: "watch",
-        link: "/Vue/Vue/03watch",
+        link: "/Vue/Vue/实例配置项/03watch",
       },
       {
         text: "methods",
-        link: "/Vue/Vue/04methods",
+        link: "/Vue/Vue/实例配置项/04methods",
       },
       {
         text: "computed",
-        link: "/Vue/Vue/05computed",
+        link: "/Vue/Vue/实例配置项/05computed",
       },
       {
         text: "directives",
-        link: "/Vue/Vue/06directives",
+        link: "/Vue/Vue/实例配置项/06directives",
       },
       {
         text: "Mixins",
-        link: "/Vue/Vue/07Mixins",
+        link: "/Vue/Vue/实例配置项/07Mixins",
       },
       {
         text: "lifecycle",
-        link: "/Vue/Vue/08LifecycleHooks",
+        link: "/Vue/Vue/实例配置项/08LifecycleHooks",
       },
     ],
   },
