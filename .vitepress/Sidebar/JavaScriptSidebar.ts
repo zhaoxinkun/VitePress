@@ -39,39 +39,25 @@ export default [
     link: "/JavaScript/JavaScript/Typejudgment",
   },
   {
-    text: "String",
-    collapsed: true,
-    items: [
-      {
-        text: "字符串定义",
-        link: "/JavaScript/JavaScript/String/StringCreate",
-      },
-      {
-        text: "字符串方法",
-        link: "/JavaScript/JavaScript/String/StringMethod",
-      },
-      {
-        text: "字符串迭代",
-        link: "/JavaScript/JavaScript/String/StringLteration",
-      },
-    ],
-  },
-  {
-    text: "Number",
-    link: "/JavaScript/JavaScript/Number",
-  },
-  {
-    text: "Boolean",
-    link: "/JavaScript/JavaScript/Boolean",
-  },
-  {
-    text: "NUll",
-    link: "/JavaScript/JavaScript/Null",
-  },
-  {
     text: "内置对象",
     collapsed: true,
     items: [
+      {
+        text: "String",
+        link: "/JavaScript/JavaScript/内置对象/String",
+      },
+      {
+        text: "Number",
+        link: "/JavaScript/JavaScript/Number",
+      },
+      {
+        text: "Boolean",
+        link: "/JavaScript/JavaScript/Boolean",
+      },
+      {
+        text: "NUll",
+        link: "/JavaScript/JavaScript/Null",
+      },
       {
         text: "Math",
         link: "/JavaScript/JavaScript/Math",
@@ -79,6 +65,36 @@ export default [
       {
         text: "Date",
         link: "/JavaScript/JavaScript/Date",
+      },
+    ],
+  },
+  {
+    text: "语句与声明",
+    collapsed: true,
+    items: [
+      {
+        text: "Var",
+        link: "/JavaScript/JavaScript/语句与声明/Var",
+      },
+      {
+        text: "Let(ES6)",
+        link: "/JavaScript/JavaScript/语句与声明/Let(ES6)",
+      },
+      {
+        text: "Const(ES6)",
+        link: "/JavaScript/JavaScript/语句与声明/Const(ES6)",
+      },
+      {
+        text: "Hoisting",
+        link: "/JavaScript/JavaScript/语句与声明/Hoisting",
+      },
+      {
+        text: "Scope(ES6)",
+        link: "/JavaScript/JavaScript/语句与声明/Scope(ES6)",
+      },
+      {
+        text: "Use Strict(ES5)",
+        link: "/JavaScript/JavaScript/语句与声明/Use Strict(ES5)",
       },
     ],
   },

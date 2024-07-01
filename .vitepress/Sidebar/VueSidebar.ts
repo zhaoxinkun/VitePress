@@ -21,11 +21,11 @@ export default [
     items: [
       {
         text: "数据代理",
-        link: "/Vue/Vue/数据代理",
+        link: "/Vue/Vue/响应式原理/01数据代理",
       },
       {
         text: "数据监测",
-        link: "/Vue/Vue/数据监测",
+        link: "/Vue/Vue/响应式原理/02数据监测",
       },
     ],
   },
@@ -106,44 +106,62 @@ export default [
     collapsed: true,
     items: [
       {
-        text: "组件基础",
-        link: "/Vue/Vue/数据代理",
-      },
-      {
         text: "extend",
-        link: "/Vue/Vue/01extend",
+        link: "/Vue/Vue/组件精讲/01extend",
       },
       {
         text: "全局组件",
-        link: "/Vue/Vue/02全局组件",
+        link: "/Vue/Vue/组件精讲/02全局组件",
       },
       {
         text: "局部组件",
-        link: "/Vue/Vue/03局部组件",
+        link: "/Vue/Vue/组件精讲/03局部组件",
+      },
+      {
+        text: "组件嵌套",
+        link: "/Vue/Vue/组件精讲/04组件嵌套",
       },
       {
         text: "函数式组件",
-        link: "/Vue/Vue/函数式组件",
+        link: "/Vue/Vue/组件精讲/05函数式组件",
+      },
+      {
+        text: "非单文件组件",
+        link: "/Vue/Vue/组件精讲/06非单文件组件",
+      },
+      {
+        text: "单文件组件",
+        link: "/Vue/Vue/组件精讲/07单文件组件",
       },
       {
         text: "组件传值",
-        link: "/Vue/Vue/数据监测",
+        collapsed: true,
+        items: [
+          {
+            text: "Props",
+            link: "/Vue/Vue/组件精讲/组件传值/01Props",
+          },
+          {
+            text: "自定义事件",
+            link: "/Vue/Vue/组件精讲/组件传值/02自定义事件",
+          },
+          {
+            text: "插槽解析",
+            link: "/Vue/Vue/组件精讲/组件传值/插槽解析",
+          },
+        ],
       },
       {
         text: "动态组件",
-        link: "/Vue/Vue/数据监测",
+        link: "/Vue/Vue/组件精讲/数据监测",
       },
       {
         text: "异步组件",
-        link: "/Vue/Vue/数据监测",
-      },
-      {
-        text: "插槽解析",
-        link: "/Vue/Vue/数据监测",
+        link: "/Vue/Vue/组件精讲/数据监测",
       },
       {
         text: "处理边界情况",
-        link: "/Vue/Vue/数据监测",
+        link: "/Vue/Vue/组件精讲/数据监测",
       },
     ],
   },
@@ -153,11 +171,11 @@ export default [
     items: [
       {
         text: "filter",
-        link: "/Vue/Vue/Filter",
+        link: "/Vue/Vue/可复用性/01Filter",
       },
       {
         text: "Plugin",
-        link: "/Vue/Vue/Plugin",
+        link: "/Vue/Vue/可复用性/02Plugin",
       },
     ],
   },
