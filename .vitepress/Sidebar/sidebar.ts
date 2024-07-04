@@ -1,30 +1,35 @@
-/*
- * @Author: zxk zhaoxinkun1124@gmail.com
- * @Date: 2024-05-04 17:36:36
- * @LastEditors: zxk zhaoxinkun1124@gmail.com
- * @LastEditTime: 2024-05-07 12:12:23
- * @FilePath: \VitePress\.vitepress\Sidebar\sidebar.ts
- * @Description:
- *
- * Copyright (c) 2024 by ${git_name_email}, All Rights Reserved.
- */
-import JavaScriptSidebar from "./JavaScriptSidebar";
-import ECMAScriptSidebar from "./ECMAScriptSidebar";
-import TypeScriptSidebar from "./TypeScriptSidebar";
+// 导入侧边导航设置
+// CSS相关导航
+import SassSidebar from "./CssSidebar/SassSidebar";
+// JS相关导航设置
+import JavaScriptSidebar from "./JavaScriptSidebar/JavaScriptSidebar";
+import ECMAScriptSidebar from "./JavaScriptSidebar/ECMAScriptSidebar";
+import TypeScriptSidebar from "./JavaScriptSidebar/TypeScriptSidebar";
+import windowSidebar from "./JavaScriptSidebar/windowSidebar";
+
+// Vue导航设置
+import VueSidebar from "./VueSidebar/VueSidebar";
+
+// 其他导入设置
 import Examples from "./Examples";
 import VScodeSidebar from "./VScodeSidebar";
-import VueSidebar from "./VueSidebar";
-import windowSidebar from "./windowSidebar";
 
 export default {
-  // 拆分出去使用的语法
   // 有二级分类的
+  // CSS专栏下的侧边导航
+  "/Css/Sass": SassSidebar,
+  // 拆分出去使用的语法
+  // JS专栏下的侧边导航
   "/JavaScript/JavaScript/": JavaScriptSidebar,
   "/JavaScript/ECMAScript/": ECMAScriptSidebar,
   "/JavaScript/TypeScript/": TypeScriptSidebar,
   "/JavaScript/window/": windowSidebar,
-  "/编程软件/VScode/": VScodeSidebar,
+
+  // Vue专栏下的侧边导航
   "/Vue/Vue": VueSidebar,
+
+  "/编程软件/VScode/": VScodeSidebar,
+
   // 没有二级分类的
   Examples: Examples,
 

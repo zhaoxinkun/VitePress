@@ -20,6 +20,7 @@ export default [
       { text: "CSS3 Transition", link: "/WebDoc/WebDoc" },
       { text: "CSS3 Transform", link: "/WebDoc/WebDoc" },
       { text: "CSS3 Transition", link: "/WebDoc/WebDoc" },
+      { text: "Sass", link: "/Css/Sass/index" },
     ],
   },
   {
