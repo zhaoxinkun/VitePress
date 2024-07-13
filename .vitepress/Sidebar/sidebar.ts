@@ -15,7 +15,10 @@ import VueSidebar from "./VueSidebar/VueSidebar";
 
 // 其他导入设置
 import Examples from "./Examples";
-import VScodeSidebar from "./VScodeSidebar";
+import VScodeSidebar from "./DevTools/VScodeSidebar";
+
+// DevTools相关的侧边导航配置
+import rollupSidebar from "./DevTools/rollupSidebar";
 
 export default {
 	// 有二级分类的
@@ -34,7 +37,9 @@ export default {
 	// Vue专栏下的侧边导航
 	"/Vue/Vue": VueSidebar,
 
-	"/编程软件/VScode/": VScodeSidebar,
+	// devTools下的所有的侧边导航
+	"/DevTools/VScode/": VScodeSidebar,
+	"/DevTools/rollup": rollupSidebar,
 
 	// 没有二级分类的
 	Examples: Examples,

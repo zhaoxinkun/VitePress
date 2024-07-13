@@ -1,21 +1,19 @@
-/*
- * @Author: zxk zhaoxinkun1124@gmail.com
- * @Date: 2024-05-07 11:12:34
- * @LastEditors: zxk zhaoxinkun1124@gmail.com
- * @LastEditTime: 2024-05-07 13:34:37
- * @FilePath: \VitePress\.vitepress\Nav\DevTools.ts
- * @Description:
- *
- * Copyright (c) 2024 by ${git_name_email}, All Rights Reserved.
- */
+// 开发工具的二级导航
 export default [
-  // DevTool二级架构
-  {
-    text: "编程软件", //二级导航栏
-    items: [
-      //（三级）导航栏
-      { text: "VScode", link: "/编程软件/VScode/index" },
-      { text: "WebStrom", link: "/JavaScript/JavaScript/index" },
-    ],
-  },
+	// DevTool二级架构
+	{
+		text: "编程软件", //导航栏类目名称
+		items: [
+			//导航栏类名内容
+			{ text: "VScode", link: "/DevTools/VScode/index" },
+			{ text: "WebStrom", link: "/DevTools/JavaScript/index" },
+		],
+	},
+	{
+		text: "构建工具", //导航栏类目名称
+		items: [
+			//导航栏类名内容
+			{ text: "rollup", link: "/DevTools/rollup/基本介绍.md" },
+		],
+	},
 ];
